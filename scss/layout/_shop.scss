@@ -1,0 +1,117 @@
+//PAGE SHOP
+
+@import "utilities/variables";
+
+.portada-shop {
+    img {
+        margin-bottom: 30px;
+    }
+}
+
+.container-shop {
+    @include flex(flex,column,nowrap,center,center);
+    width: minmax(350px, 1fr);
+    padding: 10px;
+    margin-top: 20px;
+
+    .card-shop {
+        background-color: rgba(256,256,256, .8);
+        flex: 100%;
+        margin: 10px;
+        width:300px;
+        border: 3px solid #000;
+           
+        img {
+            width:100%;
+            height: 400px;
+            opacity: .7;
+            border-bottom: 1px solid #000;
+           
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        h3{
+            letter-spacing: 1px;
+            border-bottom: 3px solid rgba(0,0,0,0.2);
+            font-size: 1.2rem;
+        }
+
+        p{
+            background-color: rgba(256,256,256,0.3);
+            font-style: italic;
+            font-weight: 400;
+            border-radius: 2px;
+            padding: 5px;
+            border: 2px inset #fff;
+            height: 180px;
+        }
+
+        button{
+            padding: 10px;
+            margin: 10px;
+            letter-spacing: 4px;
+            font-weight: 400;
+            background-color: $secondary-color;
+            font-family: 'Sansita Swashed', cursive;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 2px 2px 3px #000;
+
+            &:hover{
+                background-color: #6CE6DD;
+                color: #000000;
+                box-shadow: 2px 2px 3px #545454;
+            }
+        }
+    }
+}
+
+/*Aplico maps al proyecto*/
+
+.grid-container{
+    section{
+        .platinum{
+            background-color: map-get($map:$platinum , $key: bgc-platinum );
+            color: map-get($map:$platinum , $key: color-platinum );
+            border: map-get($map:$platinum , $key: border-platinum );
+            margin: 10px;
+            padding:50px;
+            font-size: 18px;
+            width: 150px;
+            height: 150px;
+            display:inline-block;
+            border-radius: 50%;
+        }
+
+        .gold{
+            background-color: map-get($map: $gold , $key:bgc-gold );
+            color: map-get($map: $gold , $key: color-gold );
+            border: map-get($map: $gold , $key: border-gold );
+            margin: 10px;
+            padding:50px;
+            font-size: 18px;
+            display:inline-block;
+            width: 150px;
+            height: 150px;
+            display:inline-block;
+            border-radius: 50%;
+        }
+
+        .silver{
+            background-color: map-get($map:$silver , $key: bgc-silver );
+            color: map-get($map:$silver , $key: color-silver );
+            border: map-get($map:$silver , $key: border-silver );
+            margin: 10px;
+            padding:50px;
+            font-size: 18px;
+            display:inline-block;
+            width: 150px;
+            height: 150px;
+            display:inline-block;
+            border-radius: 50%;
+        }
+    }
+}

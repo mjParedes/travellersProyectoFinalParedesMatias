@@ -1,0 +1,457 @@
+//Importo partials a documento SCSS principal
+@import "utilities/variables";
+@import "utilities/global";
+@import "layout/aboutUs";
+@import "layout/contact";
+@import "layout/media";
+@import "layout/shop";
+
+/*Maqueto web con grid area*/
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    'navbar'
+    'header'
+    'main'
+    'section'
+    'footer';
+    grid-template-columns: minmax(10rem, 1fr);
+    grid-template-rows:repeat(5, auto);
+    width: 100%;
+}
+
+.grid-container{
+    nav{
+        @include flex(flex,column,nowrap,center,center);
+        grid-area: navbar;
+        font-family: 'Montserrat', sans-serif;
+        position:sticky;
+        top: 0;
+        z-index: 10;
+        font-weight: bold;
+        padding: 2px;
+        background-color: $secondary-color-opacity;
+        height: auto;
+        width: 100%;
+        
+        i{
+            img{
+                width: 100%;
+                }
+
+            }
+            
+        ul {
+            @include flex(flex, column, nowrap, center, center);
+            list-style-type: none;
+            padding: 2px;
+
+            .active{
+                background: $third-color-opacity;
+                padding: 2px 5px;
+                border-radius: 4px;
+                text-shadow: 2px 2px 1px #000;
+                
+            }
+
+            li {
+                margin: 2px;
+                text-transform: uppercase;
+                &:hover{
+                    background: $third-color-opacity;
+                    padding: 2px 5px;
+                    border-radius: 4px;
+                    text-shadow: 2px 2px 1px #000;
+                }
+            }
+            
+                .nav-item {
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-size: 10px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+    
+.grid-container {
+    header {
+        @include flex(flex, column, nowrap, flex-start, center);
+        background-image: url("../img/cab-bg.jpg");
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        grid-area: header;
+        width: 100%;
+        height: 70vh;
+        padding: 35px 0;
+
+        .titulo-header{
+            font-size: 30px;
+            color: $secondary-color;
+            font-weight:900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .subtitulo-header {
+            font-size: 15px;
+            color: #000000;
+            font-style: italic;
+        }       
+    }
+}
+    
+
+.grid-container {
+    main {
+        grid-area: main;
+        background-image: url("../img/patronFondo1.png");
+        width: 100%;
+        padding: 20px;
+
+        p{
+            font-size: 14px;
+            margin: 30px;
+        }
+
+        .index-img {
+            margin: 25px;
+            background-color: $primary-color;
+            border-radius: 5px;
+            padding: 20px;
+            border: 2px solid #000000;
+            width: 90%;
+
+            img {
+                width: 200px;
+                height: 200px;
+                animation-name: girando;
+                animation-duration: 15s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                animation-delay: 3s;
+            
+            @keyframes girando {
+                0% {
+                    transform: rotateZ(0deg);
+                }
+
+                100% {
+                    transform: rotateZ(360deg);
+                }
+            }
+        }
+    }
+}
+
+}
+
+.grid-container{
+    main{
+        .imgHome{
+            margin:30px 0px;
+            border-top: 4px outset #000;
+            img{
+                width: 100%;
+                height:100%;
+            }
+        }
+        .btnIrCompras {
+            background: #FBCA1F;
+            font-family: inherit;
+            padding: 0.6em 1.3em;
+            font-weight: 900;
+            font-size: 18px;
+            border: 3px solid black;
+            border-radius: 0.4em;
+            box-shadow: 0.1em 0.1em;
+            &:hover {
+            transform: translate(-0.05em, -0.05em);
+            box-shadow: 0.15em 0.15em;
+            
+        }
+            &:active {
+            transform: translate(0.05em, 0.05em);
+            box-shadow: 0.05em 0.05em;
+        }
+        }
+    }
+} 
+
+.grid-container {
+    section {
+        grid-area: section;
+        background-color: $third-color;
+        padding: 20px;
+        width: 100%;
+
+        .div-avion {
+            @include flex(flex, column, nowrap, center, center);
+
+            .animacion-av {
+                width: $width-md - 50;
+                height: 250px;
+                animation-name: escalar;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                animation-delay: 2s;
+            
+            @keyframes escalar {
+                0% {
+                    transform: scale(0.5)
+                }
+
+                100% {
+                    transform: scale(1)
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-container {
+    footer {
+        grid-area: footer;
+        background-color: $secondary-color;
+        color: #ffffff;
+        padding: 10px;
+        width: 100%;
+
+        h5{
+            font-size: 12px;
+        }
+
+        .redes-footer {
+            margin: 5px;
+
+            a {
+                
+                img {
+                    width: 28px;
+                    height: 28px;
+                    margin: 3px 10px 1px 0px;
+
+                    &:hover {
+                        transform: scale(1.4);
+                        box-shadow: -2px 2px 2px #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*MEDIA QUERIES*/
+
+/*1°BREAKPOINT MOVIL LANDSCAPE VIEW*/
+@media only screen and (min-width: 600px) {
+    .grid-container {
+        grid-template-areas:
+            'navbar navbar'
+            'header header'
+            'main   main'
+            'section section'
+            'footer footer';
+        grid-template-columns: 2fr;
+        grid-template-rows: auto;
+
+        nav{
+            @include flex(flex,row,nowrap,space-between,center);
+            grid-area: navbar;
+            padding: 4px;
+    
+            ul {
+                @include flex(flex, row, nowrap, space-around, center);
+                padding: 2px;
+    
+                li {
+                    margin: 20px ;
+    
+                    .nav-item {
+                        font-size: 11px;
+                    }
+                }
+                    
+            }
+        }
+
+        header{
+            height: 90vh;
+
+            .titulo-header {
+                font-size: 50px;
+            }
+            .subtitulo-header{
+                font-size:25px; 
+            }
+        }
+    }
+        
+    .grid-container {
+        main {
+            .container-shop {
+                @include flex(flex,row,wrap,center,center);
+                height: auto;
+                
+                .card-shop {
+                    flex:45%;
+
+                    div {
+                        img {
+                            width:90%;
+                            height: 40%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*2°BREAKPOINT TABLETS*/
+@media  screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            'navbar navbar navbar'
+            'header header header'
+            'main   main    main'
+            'section section section'
+            'footer footer footer';
+        grid-template-columns: 3fr;
+        grid-template-rows: auto;
+
+        nav{
+            @include flex(flex,row,wrap,space-between,center);
+            grid-area: navbar;
+            padding: 4px;
+    
+            ul {
+                @include flex(flex, row, nowrap, space-between, center);
+                padding: 2px;
+    
+                li {
+                    margin: 30px ;
+    
+                    .nav-item {
+                        font-size: 12px;
+                    }
+                }     
+            }
+        }
+
+        header {
+            .titulo-header {
+                font-size: 60px;
+            }
+            .subtitulo-header{
+                font-size:30px; 
+            }
+
+        }
+    }
+
+    .grid-container {
+        main {
+            .container-shop {
+                @include flex(flex, row,wrap, center, center);
+
+                .card-shop {
+                    flex:30%;
+
+                    div {
+                        img {
+                            width: 100%;
+                            height: 50%;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .grid-container{
+        section{
+            .map-container{
+                @include flex(flex, row, nowrap, center,center);
+
+                p{
+                    flex:40%;
+                }
+
+                iframe{
+                    flex: 50%;
+                }
+            }
+        }
+    }
+
+    .grid-container{
+        section{
+            width: 100%;
+    
+            .vid-flex{
+                @include flex(flex,row, wrap, center, flex-start);
+    
+                div{
+                    flex: 30%;
+                }
+
+                iframe{
+                    flex: 50%;
+                }
+    
+            }
+        }
+    }
+}
+
+
+/*3°BREAKPOINT DESKTOP*/
+@media only screen and (min-width: 1024px) {
+    .grid-container {
+        grid-template-areas:
+            'navbar navbar navbar navbar'
+            'header  header  header   header'
+            'main   main    main    main'
+            'section section section section'
+            'footer footer footer footer';
+        grid-template-columns: 4fr;
+        grid-template-rows: auto;
+    }
+
+    .grid-container {
+        nav{
+           
+            ul {
+                
+                li {
+                    margin: 35px ;
+                }     
+            }
+        }
+
+        main {
+            .container-shop {
+
+                .card-shop {
+                    flex: 30%;
+
+                    div {
+                        img {
+                            width: 100%;
+                            height: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

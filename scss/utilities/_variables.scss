@@ -1,0 +1,54 @@
+
+//Declaro variables del proyecto 
+
+$primary-color: #F05454;
+$secondary-color: #001D6E;
+$third-color: #96baff;
+$secondary-color-opacity: rgba(0, 29, 110, 0.9); 
+$third-color-opacity: rgba(150, 186, 255, 0.8);
+$soft-green: #C1F4C5;
+$card-f:#FED1EF;
+$card-m: #CAF0F8;
+$bg-nav: #42C2FF;
+
+$width-small: 200px;
+$width-md: 400px;
+$width-big: 650px;
+
+
+//Mixins
+@mixin flex($display, $direction,$wrap,$just,$align){
+    display: $display ;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+
+//Maps - los aplico en html Shop-Membresias
+
+$platinum: (
+    bgc-platinum:#630606,
+    color-platinum: #ffffff,
+    border-platinum: 3px solid #000, 
+);
+
+$gold: (
+    bgc-gold:#FFB72B,
+    color-gold: #000000,
+    border-gold: 2px solid #000,
+);
+
+$silver: (
+    bgc-silver:#DFDFDE,
+    color-silver: #0000cc,
+    border-silver: 1px solid #000,
+);
+
+
+
+
+
+
+
+

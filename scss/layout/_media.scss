@@ -1,0 +1,65 @@
+//PAGE MEDIA
+
+.grid-container {
+    main {
+        .portada-media {
+            img {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 40px;
+
+        .carrusel-1{
+            margin: 50px;
+            font-weight: bolder;
+        }
+
+        .carrusel-2{
+            margin: 50px;
+            font-weight: bolder;
+        } 
+
+            }
+        }
+    }
+}
+
+.grid-container{
+    section{
+        width: 100%;
+
+        .vid-flex{
+            @include flex(flex,column, nowrap, center, center);
+            
+            div{
+                flex: 40%;
+                margin: 0px 20px 0px 5px;
+            }
+
+            iframe{
+                flex:40%;
+                width: minmax(350px, 1fr);
+                height: 300px;
+            }
+
+        }
+    }
+}
+
+//Estilizo carrusel de bootstrap
+.grid-container{
+    main{
+        .carousel-inner{
+            .carousel-item{
+                .carousel-caption{
+                    h5, p{
+                        text-shadow: 2px 2px 0px #000000;
+                        background-color: rgba(0,0,0,0.3);
+                        padding:6px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+

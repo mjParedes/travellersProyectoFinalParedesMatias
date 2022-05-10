@@ -1,0 +1,50 @@
+//PAGE CONTACTO
+
+.grid-container {
+    main {
+        .portada-contacto img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 40px;
+
+            .titulo-form {
+                margin: 30px;
+            }
+        }
+    }
+}
+
+.grid-container{
+    section{
+        h3{
+            margin: 30px;
+
+        }
+
+        .map-container{
+            @include flex(flex, column, nowrap, center,center);
+            background-color: rgba(256,256,256, 0.2);
+            border-radius: 10px;
+            border: 2px inset #fff;
+            padding: 20px;
+
+            p{
+                padding: 10px;
+            }
+
+            iframe{
+                border-radius: 10px;
+                border: 2px solid #000;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.grid-container{
+    main{
+        .borde-form{
+            border: 3px inset $secondary-color;
+        }
+    }
+}
